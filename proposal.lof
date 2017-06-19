@@ -1,0 +1,22 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Sudoku Problem and its solution\relax }}{1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sudoku Problem}}}{1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sudoku Solution}}}{1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Sudoku variants\relax }}{2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Killer Sudoku}}}{2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Alphabetical Sudoku}}}{2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {16x16 Sudoku}}}{2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \relax }}{4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Solving Sudoku directly using Brute-force Search and Reducing Sudoku to an Exact Cover Problem and solving it using Algorithm X and Dancing Links Technique}}}{4}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Venn Diagram for Class of Complexity Problems\relax }}{12}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Reduction of CircuitSat Problem to other known NP problems\relax }}{14}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sudoku Problem and its Exact Cover equivalent\relax }}{21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Completed Sudoku Puzzle\relax }}{23}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Classifications of Sudoku Puzzles\relax }}{25}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Blank Sudoku}}}{25}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {16-clue Sudoku}}}{25}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {17-clue Sudoku}}}{25}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {25-clue Sudoku}}}{25}
