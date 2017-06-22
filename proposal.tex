@@ -11,6 +11,7 @@
 \usepackage{array}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{float}
 \usepackage{amsthm}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
@@ -122,7 +123,7 @@ The Sudoku puzzle has been well-known to many for several years and researchers 
 \section{Background of the Study}
 Sudoku is a logic-based, combinatorial number puzzle, where the objective is to fill a 9$\times$9 grid with digits so that each column, row, and block contains all of the digits from 1 to 9. In 2006, it was found out that the classic 9$\times$9 Sudoku has 6, 670, 903, 753, 021, 072, 936, 960 or about 6.67 $\times$ 10\textsuperscript{21} valid Sudoku solutions \cite{Felgenhauer}. For a Sudoku with 16$\times$16 grid, the number of solutions is not known \cite{Kapanowski}. However, many Sudoku puzzles are designed to be human-playable. These human-playable puzzles can be solved using pencil and paper.\\
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \begin{sudoku-block}
 | |2| | |3| |9| |7|.
@@ -187,7 +188,7 @@ Also, a notable implementation of Algorithm X is Knuth$'$s Dancing Links or DLX.
 \newpage
 
 \section{Statement of the Problem}
-This study intends to translate into an algorithm the description of \cite{Harrysson} in reducing a Sudoku problem ot its Exact Cover equivalent and to investigate how this reduction translates to better practical runtime performances of solving Sudoku.
+This study intends to translate into an algorithm the description of \cite{Harrysson} in reducing a Sudoku problem to its Exact Cover equivalent and to investigate how this reduction translates to better practical runtime performances of solving Sudoku.
 
 \section{Objectives of the Study}
 The aim of this study is to solve Sudoku problems using the Dancing Links algorithm by designing the reduction algorithm of the Sudoku problems to instances of Exact Cover. Specifically:
