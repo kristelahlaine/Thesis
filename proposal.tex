@@ -120,8 +120,7 @@ The Sudoku puzzle has been well-known to many for several years and researchers 
 % Chapter 1
 \chapter{Introduction}
 
-\section{Background of the Study}
-Sudoku is a logic-based, combinatorial number puzzle, where the objective is to fill a 9$\times$9 grid with digits so that each column, row, and block contains all of the digits from 1 to 9. In 2006, it was found out that the classic 9$\times$9 Sudoku has 6, 670, 903, 753, 021, 072, 936, 960 or about 6.67 $\times$ 10\textsuperscript{21} valid Sudoku solutions \cite{Felgenhauer}. For a Sudoku with 16$\times$16 grid, the number of solutions is not known \cite{Kapanowski}. However, many Sudoku puzzles are designed to be human-playable. These human-playable puzzles can be solved using pencil and paper.\\
+\section{Background of the Study}Sudoku is a logic-based, combinatorial number puzzle, where the objective is to fill a 9$\times$9 grid with digits so that each column, row, and block contains all of the digits from 1 to 9. In 2006, it was found out that the classic 9$\times$9 Sudoku has 6,670,903,753,021,072,936,960 or about 6.67 $\times$ 10\textsuperscript{21} valid Sudoku solutions \cite{Felgenhauer}. For a Sudoku with 16$\times$16 grid, the number of solutions is not known \cite{Kapanowski}. Sudoku grids with less than 17 clues have the potential to have more than one solution \cite{McGuire}. Thus, a valid human-playable Sudoku must have at least 17 clues. These human-playable puzzles can be solved using pencil and paper.\\
 
 \begin{figure}[H]
 \begin{center}
@@ -152,33 +151,17 @@ Sudoku is a logic-based, combinatorial number puzzle, where the objective is to 
 \caption{Sudoku Puzzle}
 \end{figure}
 
-It was Howard Garns, a constructor from Indiana, who designed Sudoku. Originally called Number Place puzzle, the puzzle first appeared on May 1979 in a New York puzzle magazine, Dell Magazines \cite{Wilson}. In 1984, Nikoli, a puzzle magazine company in Japan, saw the Number Place puzzle and introduced it under the name Suji wa Dokushin which was then shortened to Sudoku - which meant “single number” because only one digit number appears in each cell.\\
-
-In 1997, Wayne Gould, a retired high court judge in Hong Kong, designed computer programs to produce sudoku puzzles with varying difficulties. Today, there are already 9$\times$9 and 16$\times$16 sudoku puzzles. There are even 3D sudoku puzzles in the form of 9$\times$9$\times$9.\\
-
-Different variants of Sudoku have also been made, such as Diagonal Sudoku. In Diagonal Sudoku, the grid is filled so that every row, column, 3$\times$3 box and main diagonals contains the digits 1 through 9. Another is example is Hyper Sudoku. In a 9$\times$9 grid, there are 13 boxes instead of 9. Killer Sudoku is another variant of Sudoku. The whole grid is empty and instead of boxes, the grid is divided into cages and a number clue in each cage which states the sum of all digits inside the cage.\\
-
-\begin{figure}[h]
-  \centering
-  \subfloat[Killer Sudoku]{\includegraphics[width=0.3\textwidth]{killersudoku.jpg}\label{fig:killersudoku}}
-  \hspace{0.5cm}
-  \subfloat[Alphabetical Sudoku]{\includegraphics[width=0.3\textwidth]{alphabeticalsudoku.jpg}\label{fig:alphabeticalsudoku}}
-  \hspace{0.5cm}
-  \subfloat[16x16 Sudoku]{\includegraphics[width=0.3\textwidth]{16x16.jpg}\label{fig:16x16sudoku}}
-  \caption{Sudoku variants}
-\end{figure}
-
-Solving Sudoku puzzles are both challenging and difficult. In Computer Science term, the Sudoku problem is in the complexity class of NP-complete problems. The Sudoku problem finds a solution wherein for each row, column and box, there are no repeated digits. To solve the problem just like all other NP-complete problems, the straightforward approach to Sudoku problems is to employ a brute-force algorithm with backtracking. This is relatively slow but the solution is optimal. \cite{Berggren} also compared backtracking with rule-based and Boltzman Machines but only for individual solutions of the 17-clue puzzle.\\
+Solving Sudoku puzzles are both challenging and difficult. In Computer Science term, the Sudoku problem is in the complexity class of NP-complete problems \cite{Yato}. The Sudoku problem finds a solution wherein for each row, column and box, there are no repeated digits. To solve the problem just like all other NP-complete problems, the straightforward approach to Sudoku problems is to employ a brute-force algorithm with backtracking. This is relatively slow but the solution is optimal. \cite{Berggren} also compared backtracking with rule-based and Boltzman Machines but only for individual solutions of the 17-clue puzzle.\\
 
 There are alternative methods for this. Faster approaches for NP-complete algorithms are Approximations and Randomized Algorithm, which include Genetic Algorithms, Tabu Search, and Simulated Annealing. As a consequence, the optimal solutions are not guaranteed in these alternative approaches.\\
 
-\cite{Harrysson} however tackled the solution by transforming Sudoku problems into instances of Exact Cover. In Computer Science, this is called Reduction. Any NP-Complete problem can be reduced in a polynomial time to another instance of NP-Complete problem. Once reduced, the Sudoku problem can be solved by solving its equivalent Exact Cover instance.\\
-
-However, despite showing a part of the Exact Cover matrix of the Sudoku, an algorithm for reducing a Sudoku to its Exact Cover equivalent was not shown in the study of \cite{Harrysson}.\\
+Sudoku solutions can be tackled by reducing Sudoku problems into instances of Exact Cover \cite{Harrysson}. In Computer Science, this is called Reduction. Any NP-Complete problem can be reduced in a polynomial time to another instance of NP-Complete problem. Once reduced, the Sudoku problem can be solved by solving its equivalent Exact Cover instance.\\
 
 The Exact Cover finds a set of subsets wherein the intersection of the subsets is empty and the union of the subsets is the major set. Knuth$’$s Algorithm X is a known algorithm in finding such subsets in an Exact Cover. Algorithm X is a recursive, non deterministic, depth-first, backtracking algorithm. \cite{Knuth} referred to Algorithm X as “the most obvious trial-and-error approach” for finding all solutions to the exact cover problem, which is represented by the Algorithm X using  a matrix A consisting of 0s and 1s.\\
 
-Also, a notable implementation of Algorithm X is Knuth$'$s Dancing Links or DLX. Knuth observed that a naive implementation of his Algorithm X would spend an inordinate amount of time, O(n) searching for 1’s. In DLX, only the 1’s are considered and are implemented using doubly-linked list. Because Exact Cover problems tend to be sparse, this representation is usually much more efficient in both size and computational time \cite{Dahlke}. In 2014, Mostrales, in her undergraduate thesis, presented a java implementation of the DLX, but was not anchored into any application. Same approach will be used in implementing DLX. This time, however, it will be implemented for Sudoku instances. It would also be interesting to verify if DLX can find the 6, 670, 903, 753, 021, 072, 936, 960 solutions of Sudoku within a considerable time limit.\\
+Also, a notable optimization of Algorithm X is Knuth$'$s Dancing Links or DLX. Knuth observed that a naive implementation of his Algorithm X would spend an inordinate amount of time, O(n) searching for 1’s. In DLX, only the 1’s are considered and are implemented using doubly-linked list. Because Exact Cover problems tend to be sparse, this representation is usually much more efficient in both size and computational time \cite{Dahlke}. In 2014, Mostrales, in her undergraduate thesis, presented a java implementation of the DLX, but was not anchored into any application. Same approach will be used in implementing DLX. This time, however, it will be implemented for Sudoku instances. It would also be interesting to verify if DLX can find the 6.67 $\times$ 10\textsuperscript{21} solutions of Sudoku within a considerable time limit.\\
+
+When solving the Sudoku through its Exact Cover equivalent, the difficulty does not reside in the number of clues, but on something else \cite{Harrysson}. While the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent, it remains to show how the reduction process can be scaled for Sudoku puzzles with less than 17 clues and whether if it also affects the runtime.\\
 
 \begin{figure}[h]
   \centering
@@ -188,18 +171,17 @@ Also, a notable implementation of Algorithm X is Knuth$'$s Dancing Links or DLX.
 \newpage
 
 \section{Statement of the Problem}
-This study intends to translate into an algorithm the description of \cite{Harrysson} in reducing a Sudoku problem to its Exact Cover equivalent and to investigate how this reduction translates to better practical runtime performances of solving Sudoku.
+This study intends to translate into an algorithm the description of \cite{Harrysson} in reducing Sudoku problems with less than 17 clues to its Exact Cover equivalent and find solutions of each problem using the Dancing Links.
 
 \section{Objectives of the Study}
-The aim of this study is to solve Sudoku problems using the Dancing Links algorithm by designing the reduction algorithm of the Sudoku problems to instances of Exact Cover. Specifically:
+The aim of this study is to solve non-human-playable Sudoku problems using the Dancing Links algorithm using the reduction process of the Sudoku problems to instances of Exact Cover as described by \cite{Harrysson}. Specifically:
 \begin{enumerate}
 \item To implement a usual brute force solution for Sudoku
-\item To solve Sudoku via reduction by
+\item To solve Sudoku puzzles with less than 17 clues via reduction by
 \begin{enumerate}
 \item Designing the reduction process algorithm
-\item Implementing Knuth$’$s Algorithm X and DLX
-\item Solving the Exact Cover instances of Sudoku using Algorithm X
-\item Investigating result if DLX is used for Algorithm X
+\item Implementing Knuth$’$s DLX
+\item Investigating result of DLX
 \begin{enumerate}
 \item Interpreting the Exact Cover result as an instance of Sudoku
 \end{enumerate}
