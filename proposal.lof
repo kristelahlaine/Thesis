@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Sudoku Puzzle\relax }}{1}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces \relax }}{3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Solving Sudoku directly using Brute-force Search and Reducing Sudoku to an Exact Cover Problem and solving it using Algorithm X and Dancing Links Technique}}}{3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Solving 0 - 16 clue Sudoku}}}{3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Venn Diagram for Class of Complexity Problems\relax }}{12}
