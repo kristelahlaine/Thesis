@@ -93,7 +93,9 @@ Kristel Ahlaine Gem Pabillaran}\\
 \end{center}
 \vspace{0.8cm}
 
-The Sudoku puzzle has been well-known to many for several years and researchers have come up with various algorithms to solve the Sudoku problem directly. Most researches present algorithms with good theoretical running time but solutions are not optimal. The Brute-force search is a known optimal solution but at the expense of a very slow running time depending on the difficulty of the Sudoku problem. As shown in \cite{Yato} the Sudoku is NP-Complete, it can then be concluded that the Sudoku problem can be reduced into another NP-Complete problem; in this paper, the Exact Cover problem. Thus, this paper suggests to solve the Sudoku problem in terms of its Exact Cover equivalent by designing an algorithm for reduction based on the specified approach described in \cite{Harrysson}. The Exact Cover is solved by applying Knuth$'$s Algorithm X and Dancing Links (DLX) on the binary matrix. The direct solving using Brute-force shall then be used as basis for comparison against the proposed solutions. Experiments shall vary from an empty sudoku puzzle to find all solutions and also from 25 and below clue Sudoku puzzles. We expect, especially as difficulty of the problem increases, that the result of Algorithm X and DLX to the Exact Cover equivalent of the Sudoku problem will have optimal results and better practical running time than the Brute-force search algorithm.
+The Sudoku puzzle has been well-known to many for several years and studies have come up with various algorithms to solve the Sudoku problem directly. Most studies present algorithms with good theoretical running time but solutions are not optimal. The Brute-force search is a known optimal solution but at the expense of a very slow running time depending on the difficulty of the Sudoku problem. As shown in \cite{Yato} the Sudoku is NP-Complete, it can then be shown that the Sudoku problem can be reduced into another NP-Complete problem, specifically, the Exact Cover problem. While the Exact Cover can be solved using the same brute-force approach, Knuth's Dancing Links implementation provided optimization which promised a faster practical running time \cite{Knuth}.
+
+In 2014, Harrysson described and implemented the reduction of human-playable Sudokus with clues ranging from 17 to 31 and observed that the while it is faster to reduce Sudoku puzzles with more clues, the difficulty of finding the solution does not reside in the number of clues, but on something else  \cite{Harrysson}. The motivation of this paper is to describe and implement the reduction of puzzles that were not covered by \cite{Harrysson} : the non-human playable Sudokus - puzzles with less than 17 clues and with multiple solutions. The process will involve reduction of sudoku to DLX. Runtime of the reduction and of solving the solutions will be observed and will be compared with the general observations of Harryson. Experiments will be conducted to selected suduko puzzles with 0 up to 16 clues.
 %Abstract
 
 
@@ -161,39 +163,35 @@ The Exact Cover finds a set of subsets wherein the intersection of the subsets i
 
 Also, a notable optimization of Algorithm X is Knuth$'$s Dancing Links or DLX. Knuth observed that a naive implementation of his Algorithm X would spend an inordinate amount of time, O(n) searching for 1’s. In DLX, only the 1’s are considered and are implemented using doubly-linked list. Because Exact Cover problems tend to be sparse, this representation is usually much more efficient in both size and computational time \cite{Dahlke}. In 2014, Mostrales, in her undergraduate thesis, presented a java implementation of the DLX, but was not anchored into any application. Same approach will be used in implementing DLX. This time, however, it will be implemented for Sudoku instances. It would also be interesting to verify if DLX can find the 6.67 $\times$ 10\textsuperscript{21} solutions of Sudoku within a considerable time limit.\\
 
-When solving the Sudoku through its Exact Cover equivalent, the difficulty does not reside in the number of clues, but on something else \cite{Harrysson}. Exploring human-playable Sudoku puzzles (17 or more clues), the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent. However, it remains to show how the reduction process can be scaled for Sudoku puzzles with less than 17 clues and whether if it also affects the runtime.\\
+When solving the Sudoku through its Exact Cover equivalent, the difficulty does not reside in the number of clues, but on something else \cite{Harrysson}. Exploring human-playable Sudoku puzzles (17 or more clues), the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent. However, it remains to show how the reduction process can be scaled for multi-solution Sudoku puzzles and whether if it also affects the runtime. **Add Results of Mattias Harrysson**\\
 
 \begin{figure}[h]
   \centering
   \subfloat[Solving 0 - 16 clue Sudoku]{\includegraphics[width=0.9\textwidth]{framework.jpg}\label{fig:framework}}
   \caption{}
 \end{figure}
-\newpage
 
 \section{Statement of the Problem}
-This study intends to explore Sudoku puzzles not considered to be human-playable (below 17 clues) based on the reduction optimization by \cite{Harrysson} and also whether claim of \cite{Harrysson} that the difficulty in solving Sudoku in its Exact Cover equivalent is not based on the number of clues also applies to Sudoku puzzles not considered to be human-playable (below 17.
+This study intends to describe and implement non-human playable Sudoku puzzles (less than 17 clues) based on the reduction optimization by \cite{Harrysson} and also whether claim of Harrysson that the difficulty in solving Sudoku in its Exact Cover equivalent is not based on the number of clues also applies to non-human playable Sudoku puzzles.
 
 \section{Objectives of the Study}
-The aim of this study is to continue the study of \cite{Harrysson} for the areas that were not explored, the Sudoku puzzles not considered to be human-playable (below 17 clues). Specifically:
+The aim of this study is to reduce non-human playable Sudoku puzzles to its Exact Cover equivalent and implementing the DLX algorithm. Specifically:
 \begin{enumerate}
 \item As basis for comparison, to implement a usual brute force solution for Sudoku.
-\item To solve Sudoku puzzles with less than 17 clues via reduction by:
+\item To solve non-human playable Sudoku puzzles through:
 \begin{enumerate}
-\item Implementing Knuth$’$s DLX as described by \cite{Harrysson} in designing the reduction process.
-\item Investigating result of DLX.
-\begin{enumerate}
-\item Interpreting the Exact Cover result as an instance of Sudoku
+\item Describing the reduction to Knuth$’$s DLX as shown in \cite{Harrysson}.
+\item Implementing the DLX algorithm.
+\item Experimenting different Sudoku puzzles.
 \end{enumerate}
-\end{enumerate}
-\item Compare the results of ? to the results of \cite{Harrysson}.
-\item Verify if DLX can find all solutions of Sudoku within a considerable time limit.
+\item Compare the results with the findings in \cite{Harrysson}.
 \end{enumerate}
 
 \section{Limitations}
-This study will focus on continuing the study of \cite{Harrysson} but with the focus on exploring Sudoku puzzles not considered to be human-playable (below 17 clues); which were not explored in the study of \cite{Harrysson} At the same time, this study will focus mostly on solving 9$\times$9 Sudoku problems and not its other variants.
+This study will focus on continuing the study of Harrysson but with the focus on exploring non-human playable Sudoku puzzles; which were not explored in the study of Harrysson At the same time, this study will be limited on solving 9$\times$9 Sudoku problems and not its other variants. This study will also only emphasize on the reduction and on solving the Exact Cover equivalent using DLX.
 
 \section{Significance}
-According to \cite{Harrysson}, the reduction process is arguable the most difficult since there is little written about the reduction is not much descriptive and that there is no significance in the number of clues in solving Sudoku in its Exact Cover equivalent. This study completes the study of \cite{Harrysson} by solving Sudoku puzzles not considered to be human-playable (below 17 clues). Also, to provide another description on how the reduction process  of Sudoku to its Exact Cover equivalent is done.
+According to \cite{Harrysson}, the reduction process is arguably the hardest part in the study since there is not much detailed literature about the reduction process. By solving non-human playable Sudoku puzzles in its Exact Cover equivalent, this study supplements previous studies that tackle solving Sudoku through reduction. Also, this study provides a description on how the reduction process  of non-human playabe Sudoku puzzles to its Exact Cover equivalent is done. This will also hope to spark the interest of other software engineers to take advantage of reduction as a mechanism to solve real-world problems.
 
 \chapter{Literature Review}
 Many practical algorithms used for solving the Sudoku problems are fast enough to solve the puzzle but the solutions are not optimal. Thus, in solving the Sudoku problem, the optimal way of doing it would be through brute-force search and the most known algorithm for the brute-force search is backtracking \cite{Cazenave}. However, this solution is very slow and inefficient. \cite{Knuth} introduced a practically faster technique by applying a doubly-linked list to an algorithm he discovered, Algorithm X. The technique is called the Dancing Links (DLX). Knuth said that The Algorithm X and DLX, however, can only be applied to an Exact Cover Problem. As shown by \cite{Yato}, the Sudoku problem is NP-Complete by constructing an n\textsuperscript{2}$\times$n\textsuperscript{2} instance of Sudoku from an n$\times$n instance of a Latin Square Completion. Thus being an NP-Complete problem, the Sudoku problem is reducible to an Exact Cover problem, which is also an NP-Complete problem.\\
@@ -339,7 +337,7 @@ The brute force method will be used as the basis of comparison of the other solu
 \vspace{-0.5cm}
 \item Reduction of Sudoku to Exact Cover
 \vspace{-0.5cm}
-\item Solving the Exact Cover (through Algorithm X and DLX)
+\item Solving the Exact Cover through DLX
 \end{enumerate}
 Lastly, the Sudoku puzzles will be classified so that the algorithms’ performance can be observed.\\
 
@@ -508,32 +506,6 @@ The position of 1’s in each selected row from the exact cover matrix will defi
 \section{Exact Cover Algorithms}
 After using the Brute-force search in solving Sudoku problems, the Sudoku problems will then be solved in its Exact Cover equivalent form. Exact Cover algorithms will be used in solving the problems. Knuth describes Algorithm X as the most obvious trial-and-error approach in \cite{Knuth}. It is a recursive backtracking algorithm that is generally useful in solving exact cover problems. Theoretically, the average search time complexity of Algorithm X is O(n). Another algorithm for solving exact cover problems is the Dancing Links. Dancing Links is the technique used by Donald Knuth to efficiently implement Algorithm X. The naive implementation of Algorithm X was observed by Knuth to take up an excessive amount of time in searching for 1’s. To solve this problem, Knuth used a sparse matrix where only 1’s are stored, thus, improving the complexity from O(n) to O(1).
 
-\subsection{Algorithm X Implementation}
-Algorithm X will be implemented first, once the reduction is complete, as it  stands as a basis for comparison among both methods used in solving the exact cover problem of a Sudoku. This is tested whether it provides a more efficient solution to solving the problem or not. Algorithm X is as follows:
-\begin{enumerate}
-\item If the matrix A has no columns, the current partial solution is a valid solution; terminate immediately.
-\vspace{-0.5cm}
-\item Otherwise, choose a column \emph{c} deterministically.
-\vspace{-0.5cm}
-\item Choose a row \emph{r} such that A\textsubscript{r1c}  = 1 nondeterministically.
-\vspace{-0.5cm}
-\item Include row \emph{r} in the partial solution.
-\vspace{-0.5cm}
-\item For each column \emph{j} such that A\textsubscript{r1j}  = 1,
-\vspace{-0.5cm}
-\begin{enumerate}
-\item For each row \emph{i} A\textsubscript{r1j}  = 1,
-\vspace{-0.5cm}
-\begin{enumerate}
-\item Delete row \emph{i} from matrix \emph{A}.
-\vspace{-0.5cm}
-\end{enumerate}
-\item Delete column \emph{j} from matrix \emph{A}.
-\vspace{-0.5cm}
-\end{enumerate}
-\item Repeat this algorithm recursively on the reduced matrix \emph{A}.
-\end{enumerate}
-
 \subsection{DLX Implementation}
 After using Algorithm X to solve the Sudoku problem, this paper then proceeds to its most important implementation, using the Dancing Links(DLX) technique on Algorithm X in order to solve the Sudoku problem. The Dancing Links is a technique suggested by Donald Knuth to solve an exact cover problem using Algorithm X more efficiently. DLX concept is simply unlinking two connected nodes and also potentially link back again those two nodes. The idea of DLX is based on the observation that in a circular doubly linked list of nodes,\\
 $L[R[x]] \leftarrow L[x];\\
@@ -574,40 +546,12 @@ The position of 1’s in each selected row from the exact cover matrix will defi
 \caption{{\itshape X\textsubscript{j} = \{\ 6, 89, 215, 260 \}}}
 \end{table}
 
+\section{}
 \begin{figure}[h]
   \centering
   {\includegraphics[width=0.3\textwidth]{Sudoku_Puzzle_Answer.jpg}\label{fig:puzzleanswer}}
   \caption{Completed Sudoku Puzzle}
 \end{figure}
-
-\section{Sudoku Puzzles}
-\begin{figure}[h]
-  \centering
-  {\includegraphics[width=0.7\textwidth]{clues.jpg}\label{fig:clues}}
-\end{figure}
-In solving a Sudoku puzzle, the higher the number of clues, the easier it would be solve the problem. The least known number of clues in order to have a unique solution in for a Sudoku problem is 17 \cite{Jones}. \cite{McGuire} also made a research that there are no 16-clue Sudoku puzzles. A Sudoku puzzle with less than 17 clues would have the tendency to produce more than one output. Thus, it would invalid the puzzle from being a Sudoku puzzle.\\
-
-This paper will investigate the following sudoku puzzles:
-\begin{enumerate}
-\item Blank (zero-clue) sudoku
-\item 1-16 clue puzzles (with several solutions)
-\item 17-clue puzzles (each has single solution)
-\item 18-25 clue sudoku (considered as easy puzzles)\\
-\end{enumerate}
-\newpage
-\begin{figure}[h]
-  \centering
-  \subfloat[Blank Sudoku]{\includegraphics[width=0.4\textwidth]{blanksudoku.jpg}\label{fig:blanksudoku}}
-  \hspace{2cm}
-  \vspace{3cm}
-  \subfloat[16-clue Sudoku]{\includegraphics[width=0.4\textwidth]{16-clue.jpg}\label{fig:16-clue}}
-  \hfill
-  \subfloat[17-clue Sudoku]{\includegraphics[width=0.4\textwidth]{17-clue.jpg}\label{fig:17-clue}}
-  \hspace{2cm}
-  \subfloat[25-clue Sudoku]{\includegraphics[width=0.4\textwidth]{25-clue.jpg}\label{fig:25-clue}}
-  \caption{Classifications of Sudoku Puzzles}
-\end{figure}
-\noindent For each test, 3 to 5 runs will be done and the average runtime will be noted.
 
 \newpage
 \begin{center}

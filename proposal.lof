@@ -4,13 +4,8 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Solving 0 - 16 clue Sudoku}}}{3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Venn Diagram for Class of Complexity Problems\relax }}{12}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Reduction of CircuitSat Problem to other known NP problems\relax }}{14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Venn Diagram for Class of Complexity Problems\relax }}{11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Reduction of CircuitSat Problem to other known NP problems\relax }}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sudoku Problem and its Exact Cover equivalent\relax }}{21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Completed Sudoku Puzzle\relax }}{23}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Classifications of Sudoku Puzzles\relax }}{25}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Blank Sudoku}}}{25}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {16-clue Sudoku}}}{25}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {17-clue Sudoku}}}{25}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {25-clue Sudoku}}}{25}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sudoku Problem and its Exact Cover equivalent\relax }}{20}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Completed Sudoku Puzzle\relax }}{22}

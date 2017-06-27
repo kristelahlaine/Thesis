@@ -4,23 +4,22 @@
 \contentsline {chapter}{List of Tables}{iv}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Background of the Study}{1}
-\contentsline {section}{\numberline {1.2}Statement of the Problem}{4}
-\contentsline {section}{\numberline {1.3}Objectives of the Study}{4}
+\contentsline {section}{\numberline {1.2}Statement of the Problem}{3}
+\contentsline {section}{\numberline {1.3}Objectives of the Study}{3}
 \contentsline {section}{\numberline {1.4}Limitations}{4}
-\contentsline {section}{\numberline {1.5}Significance}{5}
-\contentsline {chapter}{\numberline {2}Literature Review}{6}
-\contentsline {chapter}{\numberline {3}Theoretical Framework}{10}
-\contentsline {section}{\numberline {3.1}Complexity Classes}{10}
-\contentsline {section}{\numberline {3.2}Exact Cover}{12}
-\contentsline {section}{\numberline {3.3}Reduction}{13}
-\contentsline {chapter}{\numberline {4}Methodology}{15}
-\contentsline {section}{\numberline {4.1}Brute-force Implementation}{15}
-\contentsline {section}{\numberline {4.2}Reduction of Blank Sudoku to Exact Cover}{17}
-\contentsline {subsection}{\numberline {4.2.1}Reduction of Sudoku with Clues to Exact Cover}{20}
-\contentsline {section}{\numberline {4.3}Exact Cover Algorithms}{21}
-\contentsline {subsection}{\numberline {4.3.1}Algorithm X Implementation}{21}
-\contentsline {subsection}{\numberline {4.3.2}DLX Implementation}{22}
-\contentsline {section}{\numberline {4.4}Interpretation of Exact Cover result}{23}
-\contentsline {section}{\numberline {4.5}Sudoku Puzzles}{23}
-\contentsline {chapter}{References}{26}
-\contentsline {chapter}{References}{27}
+\contentsline {section}{\numberline {1.5}Significance}{4}
+\contentsline {chapter}{\numberline {2}Literature Review}{5}
+\contentsline {chapter}{\numberline {3}Theoretical Framework}{9}
+\contentsline {section}{\numberline {3.1}Complexity Classes}{9}
+\contentsline {section}{\numberline {3.2}Exact Cover}{11}
+\contentsline {section}{\numberline {3.3}Reduction}{12}
+\contentsline {chapter}{\numberline {4}Methodology}{14}
+\contentsline {section}{\numberline {4.1}Brute-force Implementation}{14}
+\contentsline {section}{\numberline {4.2}Reduction of Blank Sudoku to Exact Cover}{16}
+\contentsline {subsection}{\numberline {4.2.1}Reduction of Sudoku with Clues to Exact Cover}{19}
+\contentsline {section}{\numberline {4.3}Exact Cover Algorithms}{20}
+\contentsline {subsection}{\numberline {4.3.1}DLX Implementation}{20}
+\contentsline {section}{\numberline {4.4}Interpretation of Exact Cover result}{21}
+\contentsline {section}{\numberline {4.5}}{22}
+\contentsline {chapter}{References}{23}
+\contentsline {chapter}{References}{24}
