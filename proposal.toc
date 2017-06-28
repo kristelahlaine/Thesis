@@ -20,6 +20,6 @@
 \contentsline {section}{\numberline {4.3}Exact Cover Algorithms}{20}
 \contentsline {subsection}{\numberline {4.3.1}DLX Implementation}{20}
 \contentsline {section}{\numberline {4.4}Interpretation of Exact Cover result}{21}
-\contentsline {section}{\numberline {4.5}}{22}
+\contentsline {chapter}{\numberline {5}Research Schedule}{23}
 \contentsline {chapter}{References}{23}
 \contentsline {chapter}{References}{24}

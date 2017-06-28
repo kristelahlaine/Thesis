@@ -163,7 +163,7 @@ The Exact Cover finds a set of subsets wherein the intersection of the subsets i
 
 Also, a notable optimization of Algorithm X is Knuth$'$s Dancing Links or DLX. Knuth observed that a naive implementation of his Algorithm X would spend an inordinate amount of time, O(n) searching for 1’s. In DLX, only the 1’s are considered and are implemented using doubly-linked list. Because Exact Cover problems tend to be sparse, this representation is usually much more efficient in both size and computational time \cite{Dahlke}. In 2014, Mostrales, in her undergraduate thesis, presented a java implementation of the DLX, but was not anchored into any application. Same approach will be used in implementing DLX. This time, however, it will be implemented for Sudoku instances. It would also be interesting to verify if DLX can find the 6.67 $\times$ 10\textsuperscript{21} solutions of Sudoku within a considerable time limit.\\
 
-When solving the human-playable Sudoku puzzles (17 or more clues) through its Exact Cover equivalent, results showed that the reduction from Sudoku to its Exact Cover is faster when there are more clues \cite{Harrysson}. However, Harrysson also noted that the difficulty does not reside in the number of clues, but on something else. This was observed as the solving time of Sudoku puzzles ranging from 17 to 31 clues were mostly around 0.0 to 0.4 seconds. Exploring human-playable Sudoku puzzles, the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent. However, it remains to show how the reduction process can be scaled for non-human playable Sudoku puzzles and whether it also affects the runtime.\\
+When solving the human-playable Sudoku puzzles (17 or more clues) through its Exact Cover equivalent, results showed that the reduction from Sudoku to its Exact Cover is faster when there are more clues \cite{Harrysson}. However, Harrysson also noted that the difficulty does not reside in the number of clues, but on something else. This was observed as the solving time of Sudoku puzzles ranging from 17 to 31 clues were mostly below 0.4 seconds. Exploring human-playable Sudoku puzzles, the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent. However, it remains to show how the reduction process can be scaled for non-human playable Sudoku puzzles and whether it also affects the runtime.\\
 
 \begin{figure}[h]
   \centering
@@ -546,19 +546,13 @@ The position of 1’s in each selected row from the exact cover matrix will defi
 \caption{{\itshape X\textsubscript{j} = \{\ 6, 89, 215, 260 \}}}
 \end{table}
 
-\section{}
 \begin{figure}[h]
   \centering
   {\includegraphics[width=0.3\textwidth]{Sudoku_Puzzle_Answer.jpg}\label{fig:puzzleanswer}}
   \caption{Completed Sudoku Puzzle}
 \end{figure}
 
-\newpage
-\begin{center}
-\LARGE \hspace{2.5cm} \textbf{Research Schedule}
-\newline
-\end{center}
-
+\chapter{Research Schedule}
 The table below shows the list of activities and the corresponding time frame for this study.
 \begin{table}[!ht]
 \begin{center}
@@ -598,4 +592,4 @@ Bookbinding and Submission of Copies & Middle of September 2017\\
 \nocite{*}
 \bibliography{references}
 
-\end{document}\grid
+\end{document}
