@@ -58,8 +58,8 @@
 \singlespacing
 \begin{center}
 
-{\bf\Large Reduction of Sudoku Puzzle to Exact Cover and}\\
-{\bf\Large Implementing the Exact Cover Equivalent Using Dancing Links}
+{\bf\Large Solving blank-whateveer Sudoku Puzzles with Dancing Links Through Reduction }\\
+
 
 \vspace{\fill}
 
@@ -157,22 +157,22 @@ Solving Sudoku puzzles are both challenging and difficult. In Computer Science t
 
 There are alternative methods for this. Faster approaches for NP-complete algorithms are Approximations and Randomized Algorithm, which include Genetic Algorithms, Tabu Search, and Simulated Annealing. As a consequence, the optimal solutions are not guaranteed in these alternative approaches.\\
 
-Sudoku solutions can be tackled by reducing Sudoku problems into instances of Exact Cover \cite{Harrysson}. In Computer Science, this is called Reduction. Any NP-Complete problem can be reduced in a polynomial time to another instance of NP-Complete problem. Once reduced, the Sudoku problem can be solved by solving its equivalent Exact Cover instance. It is important to note that while the Sudoku is a well-known platform around the world and easy to understand, its reduction to Exact Cover is not as easy.\\
+Sudoku solutions can be tackled by reducing Sudoku problems into instances of Exact Cover \cite{Harrysson}. In Computer Science, this is called Reduction. Any NP-Complete problem can be reduced in a polynomial time to another instance of NP-Complete problem. Once reduced, the Sudoku problem can be solved through its equivalent Exact Cover instance. It is important to note that while the Sudoku is a well-known platform around the world and easy to understand, its reduction to Exact Cover is not as easy.\\
 
 The Exact Cover finds a set of subsets wherein the intersection of the subsets is empty and the union of the subsets is the major set. Knuth$’$s Algorithm X is a known algorithm in finding such subsets in an Exact Cover. Algorithm X is a recursive, non deterministic, depth-first, backtracking algorithm. \cite{Knuth} referred to Algorithm X as “the most obvious trial-and-error approach” for finding all solutions to the exact cover problem, which is represented by the Algorithm X using  a matrix A consisting of 0s and 1s.\\
 
 Also, a notable optimization of Algorithm X is Knuth$'$s Dancing Links or DLX. Knuth observed that a naive implementation of his Algorithm X would spend an inordinate amount of time, O(n) searching for 1’s. In DLX, only the 1’s are considered and are implemented using doubly-linked list. Because Exact Cover problems tend to be sparse, this representation is usually much more efficient in both size and computational time \cite{Dahlke}. In 2014, Mostrales, in her undergraduate thesis, presented a java implementation of the DLX, but was not anchored into any application. Same approach will be used in implementing DLX. This time, however, it will be implemented for Sudoku instances. It would also be interesting to verify if DLX can find the 6.67 $\times$ 10\textsuperscript{21} solutions of Sudoku within a considerable time limit.\\
 
-When solving the human-playable Sudoku puzzles (17 or more clues) through its Exact Cover equivalent, results showed that the reduction from Sudoku to its Exact Cover is faster when there are more clues \cite{Harrysson}. However, Harrysson also noted that the difficulty does not reside in the number of clues, but on something else. This was observed as the solving time of Sudoku puzzles ranging from 17 to 31 clues were mostly below 0.4 seconds. Exploring human-playable Sudoku puzzles, the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent. However, it remains to show how the reduction process can be scaled for non-human playable Sudoku puzzles and whether it also affects the runtime.\\
+Harrysson reduced to its Exact Cover equivalent Sudoku puzzles ranging from 17 clues to a full 81 clues. Results of the  optimized reduction showed that the reduction from Sudoku to its Exact Cover is faster when there are more clues \cite{Harrysson}. Generally the same result was also shown from the results of the naive reduction. However, there were some instances that the results showed irregular patterns in terms of the reduction time. Results also showed that the optimized reduction performed faster reduction from Sudoku to its Exact Cover with an average reduction time of 2.54 seconds as opposed to the average reduction time of 136 seconds of the naive reduction. When solving the human-playable Sudoku puzzles, Harrysson only focused on the Sudoku puzzles ranging from 17 clues to 31 clues. Solving the puzzles through their Exact Cover equivalent, Harrysson observed that the difficulty does not reside in the number of clues, but on something else. This was observed as the solving time of Sudoku puzzles ranging from 17 to 31 clues were mostly below 0.1 seconds.\\
 
 \begin{figure}[h]
   \centering
-  \subfloat[Solving 0 - 16 clue Sudoku]{\includegraphics[width=0.9\textwidth]{framework.jpg}\label{fig:framework}}
-  \caption{}
+  {\includegraphics[width=0.9\textwidth]{framework.jpg}\label{fig:framework}}
+  \caption{As shown in the image, the part covered by the curly brace was explored by Harrysson and Laestander. The shaded part will be the focus of this study based on the study of Harrysson and Laestander}
 \end{figure}
 
 \section{Statement of the Problem}
-This study intends to describe and implement non-human playable Sudoku puzzles (less than 17 clues) based on the reduction optimization by \cite{Harrysson} and also whether claim of Harrysson that the difficulty in solving Sudoku in its Exact Cover equivalent is not based on the number of clues also applies to non-human playable Sudoku puzzles.
+Exploring Sudoku puzzles ranging from 17 clues to 31 clues, the reduction of \cite{Harrysson} shows promising results in solving the Sudoku in its Exact Cover equivalent. However, it remains to show how the reduction process can be scaled for non-human playable Sudoku puzzles and whether it also affects the runtime.\\
 
 \section{Objectives of the Study}
 The aim of this study is to reduce non-human playable Sudoku puzzles to its Exact Cover equivalent and implementing the DLX algorithm. Specifically:
@@ -400,7 +400,7 @@ In implementing  the Brute-force algorithm in the Sudoku problem, the algorithm 
 \end{figure}
 
 \section{Reduction of Blank Sudoku to Exact Cover}
-Finding a more efficient way of solving the Sudoku problem is one of the main focuses of this paper, the next step will be the implementing of the reduction of the Sudoku problem to an exact cover problem. In the standard 9$\times$9 Sudoku variant, in which each of 9$\times$9 cells is assigned one of 9 numbers, there are 9$\times$9$\times$9=729 possibilities. Using obvious notation for rows, columns and numbers, the possibilities can be labeled R\textsubscript{1}C\textsubscript{1}\textbf{\#1}, R\textsubscript{1}C\textsubscript{1}\textbf{\#2}, ..., R\textsubscript{9}C\textsubscript{9}\textbf{\#9} (Harryson and Laestander, 2014). (Harryson and Laestander, 2014) provides detail in reducing the Sudoku problem to an exact cover problem containing four constraints:
+Since this study is anchored from \cite{Harrysson}, the reduction process will also follow the four constraints as described in the study: 
 \begin{enumerate}[label=\alph*.]
 \item cell constraint
 \vspace{-0.5cm}
@@ -410,9 +410,9 @@ Finding a more efficient way of solving the Sudoku problem is one of the main fo
 \vspace{-0.5cm}
 \item box constraint
 \end{enumerate}
-The fact that each kind of constraint involves exactly one of something is what makes Sudoku an exact hitting set problem. The constraints can be represented by constraint sets. The problem is to select possibilities such that each constraint set contains (i.e., is hit by) exactly one selected possibility. \cite{Harrysson} uses the following convention for Cell Constraint rows, Row Constraint rows, Column Constraint rows, and Box Constraint rows.\\
+ In the standard 9$\times$9 Sudoku variant, in which each of 9$\times$9 cells is assigned one of 9 numbers, there are 9$\times$9$\times$9=729 possibilities. Using obvious notation for rows, columns and numbers, the possibilities can be labeled R\textsubscript{1}C\textsubscript{1}\textbf{\#1}, R\textsubscript{1}C\textsubscript{1}\textbf{\#2}, ..., R\textsubscript{9}C\textsubscript{9}\textbf{\#9} \cite{Harrysson}.\\
 
-\noindent To avoid confusion in the format, the matrix will be arranged as cell constraint, row constraint, column constraint, and then box constraint. Such that the first 81 columns of the matrix will belong to the cell constraint and the next 81 columns will belong to the row constraint as is shown in the representation below.\\
+\noindent Further, Harrysson arranged the matrix in this format: cell constraint, row constraint, column constraint, and then box constraint such that the first 81 columns of the matrix will belong to the cell constraint and the next 81 columns will belong to the row constraint as is shown in the representation below.\\
 
 \noindent The following possibilities in the Sudoku Grid should be transformed to its Exact Cover form as shown below:\\
 {\itshape P\textsubscript{i} = \{\ 1, 1, 1 \} $\Rightarrow$ X\textsubscript{j} = \{\ 1, 82, 163, 244 \}}\\
@@ -436,6 +436,8 @@ Or as shown in the illustration below:
 \end{tabular}
 \newline
 \newline
+
+The description of the constraints are as follows:\\
 
 \textbf{Cell Constraint:} Each cell in the Sudoku Grid has nine candidates which means that there must be nine rows in the Exact Cover Matrix for each cell where the first cell has 1’s in the first column for the first nine rows, the second cell has 1’s in the second column and so forth.  For example, the constraint set for row 1 and column 1, which can be labeled r1c1, contains the 9 possibilities for row 1 and column 1 but different numbers.\\
 r\textsubscript{1}c\textsubscript{1} = \{r\textsubscript{1}c\textsubscript{1}\textbf{\#1}, r\textsubscript{1}c\textsubscript{1}\textbf{\#2}, r\textsubscript{1}c\textsubscript{1}\textbf{\#3}, r\textsubscript{1}c\textsubscript{1}\textbf{\#4}, r\textsubscript{1}c\textsubscript{1}\textbf{\#5}, r\textsubscript{1}c\textsubscript{1}\textbf{\#6}, r\textsubscript{1}c\textsubscript{1}\textbf{\#7}, r\textsubscript{1}c\textsubscript{1}\textbf{\#8}, r\textsubscript{1}c\textsubscript{1}\textbf{\#9}\}.\\
@@ -479,7 +481,7 @@ The position of 1’s in each selected row from the exact cover matrix will defi
 & \textbf{1\hspace{0.1cm}...\hspace{0.1cm} 41 \hspace{0.1cm}... \hspace{0.1cm}	81} & \textbf{82\hspace{0.1cm} ... 124 \hspace{0.1cm}... 162} & \textbf{163 ... 205 ... 243} & \textbf{244 ... 286 ... 324}\\ 
 {\itshape P\textsubscript{i} = \{\ 5, 5, 7 \}} & 0\hspace{0.1cm} ...\hspace{0.1cm} 1 \hspace{0.2cm}... \hspace{0.1cm}	0 & 0 \hspace{0.2cm} ...\hspace{0.2cm} 1 \hspace{0.3cm}... \hspace{0.1cm}	0 & 0\hspace{0.4cm} ...\hspace{0.2cm} 1\hspace{0.28cm}... \hspace{0.1cm}0 & 0\hspace{0.4cm} ...\hspace{0.2cm} 1 \hspace{0.18cm}... \hspace{0.1cm}	0\\ 
 \end{tabular}
-\caption{{Exact cover representation of {\itshape P = \{\ 5, 5, 7 \}}}}
+\caption{{Exact cover representation of {\itshape P\textsubscript{i} = \{\ 5, 5, 7 \}}}}
 \end{table}
 
 \begin{figure}[h]
@@ -503,11 +505,9 @@ The position of 1’s in each selected row from the exact cover matrix will defi
 \end{figure}
 
 \newpage
-\section{Exact Cover Algorithms}
-After using the Brute-force search in solving Sudoku problems, the Sudoku problems will then be solved in its Exact Cover equivalent form. Exact Cover algorithms will be used in solving the problems. Knuth describes Algorithm X as the most obvious trial-and-error approach in \cite{Knuth}. It is a recursive backtracking algorithm that is generally useful in solving exact cover problems. Theoretically, the average search time complexity of Algorithm X is O(n). Another algorithm for solving exact cover problems is the Dancing Links. Dancing Links is the technique used by Donald Knuth to efficiently implement Algorithm X. The naive implementation of Algorithm X was observed by Knuth to take up an excessive amount of time in searching for 1’s. To solve this problem, Knuth used a sparse matrix where only 1’s are stored, thus, improving the complexity from O(n) to O(1).
+\section{DLX Implementation}
+After using the Brute-force search in solving Sudoku problems, this study then proceeds to its most important implementation, solving the blank-whatever Sudoku puzzles through Dancing Links. The Dancing Links is a technique suggested by Donald Knuth to solve an exact cover problem more efficiently. DLX concept is simply unlinking two connected nodes and also potentially link back again those two nodes. The idea of DLX is based on the observation that in a circular doubly linked list of nodes.
 
-\subsection{DLX Implementation}
-After using Algorithm X to solve the Sudoku problem, this paper then proceeds to its most important implementation, using the Dancing Links(DLX) technique on Algorithm X in order to solve the Sudoku problem. The Dancing Links is a technique suggested by Donald Knuth to solve an exact cover problem using Algorithm X more efficiently. DLX concept is simply unlinking two connected nodes and also potentially link back again those two nodes. The idea of DLX is based on the observation that in a circular doubly linked list of nodes,\\
 $L[R[x]] \leftarrow L[x];\\
 R[L[x]] \leftarrow R[x];$\\
 will remove node x from the list, while\\
@@ -534,6 +534,7 @@ The above instance is implemented as linked list below. The DLX follows algorith
 \newline
 The links are restored using the second set of equations.
 
+\newpage
 \section{Interpretation of Exact Cover result}
 The position of 1’s in each selected row from the exact cover matrix will define the position of solution in the Sudoku grid. For example, for {\itshape X\textsubscript{j} = \{\ 6, 89, 215, 260 \}} as shown in its representation in the matrix, its equivalent Sudoku instance is {\itshape P\textsubscript{i} = \{\ 1, 6, 8 \}} as shown in the Sudoku puzzle below.
 
