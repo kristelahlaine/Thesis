@@ -1,6 +1,36 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Bartlett%
+, Chartier%
+, Langville%
+\BCBL {}\ \BBA {} Rankin%
+}{%
+Bartlett%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+Bartlett}
+\APACinsertmetastar {%
+Bartlett}%
+\begin{APACrefauthors}%
+Bartlett, A\BPBI C.%
+, Chartier, T\BPBI P.%
+, Langville, A\BPBI N.%
+\BCBL {}\ \BBA {} Rankin, T\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+\APACrefbtitle {\textit{An Integer Programming Model for the Sudoku Problem}.}
+  {\textit{An Integer Programming Model for the Sudoku Problem}.}
+\newblock
+\APAChowpublished
+  {\url{https://pdfs.semanticscholar.org/152c/baf232689b44da800437debefdb00b54fc19.pdf}}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Bertram~Felgenhauer%
 }{%
 Bertram~Felgenhauer%
